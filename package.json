@@ -2,9 +2,12 @@
   "name": "openai-stream-mini",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "pnpm tsc",
+    "tsc": "tsc"
   },
   "keywords": [],
   "author": "",
