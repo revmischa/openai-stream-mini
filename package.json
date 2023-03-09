@@ -19,6 +19,9 @@
     "node",
     "browser"
   ],
+  "engines": {
+    "node": ">=0.18"
+  },
   "author": "Mischa Spiegelmock <me@mish.dev>",
   "license": "MIT",
   "devDependencies": {
