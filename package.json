@@ -1,7 +1,7 @@
 {
   "name": "openai-stream-mini",
   "version": "1.0.0",
-  "description": "",
+  "description": "Lightweight OpenAI completion streaming client for Node.js and the browser",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
@@ -9,9 +9,14 @@
     "build": "pnpm tsc",
     "tsc": "tsc"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "openai",
+    "stream",
+    "node",
+    "browser"
+  ],
+  "author": "Mischa Spiegelmock <me@mish.dev>",
+  "license": "MIT",
   "devDependencies": {
     "@tsconfig/node18": "^1.0.1",
     "@types/node": "18",
