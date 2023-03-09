@@ -23,6 +23,10 @@
     "node": ">=0.18"
   },
   "author": "Mischa Spiegelmock <me@mish.dev>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/revmischa/openai-stream-mini.git"
+  },
   "license": "MIT",
   "devDependencies": {
     "@tsconfig/node18": "^1.0.1",
