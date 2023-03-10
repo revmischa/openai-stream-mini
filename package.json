@@ -1,6 +1,6 @@
 {
   "name": "openai-stream-mini",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Lightweight OpenAI completion streaming client for Node.js and the browser",
   "module": "./dist/index.js",
   "main": "./dist/index.js",
