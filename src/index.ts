@@ -2,7 +2,7 @@ import type { CreateCompletionRequest } from "openai";
 
 export type OnTextCallback = (text: string) => Promise<void> | undefined;
 
-import { throttle } from "./throttle";
+import { throttle } from "./throttle.js";
 
 interface StreamCompletionArgs {
   apiKey: string;
