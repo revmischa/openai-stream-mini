@@ -12,7 +12,8 @@
   ],
   "scripts": {
     "build": "pnpm tsc",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "release": "pnpm build && pnpm version patch && pnpm publish"
   },
   "keywords": [
     "openai",
