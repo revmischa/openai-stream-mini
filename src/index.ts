@@ -53,6 +53,7 @@ const _streamCompletion = async (
   const reader = response.body.getReader();
 
   let fullText = "";
+  let buffer = "";
 
   async function readMore() {
     const { value, done } = await reader.read();
@@ -84,17 +85,32 @@ const _streamCompletion = async (
           );
         }
 
-        const data = line.slice(prefix.length);
-        if (data.trim().startsWith("[DONE]")) {
+        let jsonBuf = line.slice(prefix.length);
+        if (jsonBuf.trim().startsWith("[DONE]")) {
           return;
+        }
+
+        // may be a continuation of a previous chunk
+        if (prefix === "data:" && buffer) {
+          jsonBuf = buffer + jsonBuf;
         }
 
         let json;
         try {
-          json = JSON.parse(data);
+          json = JSON.parse(jsonBuf);
+          buffer = "";
         } catch (error) {
-          console.error("Unexpected response from OpenAI stream, data=", data);
-          throw error;
+          console.error(
+            "Incomplete JSON chunk from OpenAI stream, prefix=",
+            prefix,
+            " data=",
+            jsonBuf
+          );
+          buffer = jsonBuf;
+
+          // keep reading
+          await readMore();
+          return;
         }
 
         if (json.content) {
