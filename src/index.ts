@@ -100,11 +100,12 @@ const _streamCompletion = async (
           json = JSON.parse(jsonBuf);
           buffer = "";
         } catch (error) {
-          console.error(
+          console.warn(
             "Incomplete JSON chunk from OpenAI stream, prefix=",
             prefix,
             " data=",
-            jsonBuf
+            jsonBuf,
+            ". Trying to read more."
           );
           buffer = jsonBuf;
 
