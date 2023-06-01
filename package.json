@@ -1,9 +1,10 @@
 {
   "name": "openai-stream-mini",
-  "version": "1.0.5",
+  "version": "1.0.10",
   "description": "Lightweight OpenAI completion streaming client for Node.js and the browser",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "module": "./dist/index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "type": "module",
   "files": [
     "dist",
@@ -11,7 +12,8 @@
   ],
   "scripts": {
     "build": "pnpm tsc",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "release": "pnpm build && pnpm version patch && pnpm publish"
   },
   "keywords": [
     "openai",
